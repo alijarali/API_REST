@@ -1,4 +1,8 @@
 Tener eclipse instalado
 Instalar MAMP+PhpMyAdmin
 Instalar WildFly
+  Copiar la carpeta en el disco C:
+    New server runtime environment
+    Instalar jdk y todo eso
 Instalar PostMan
+(JSP y JSF no hacen falta pa ná en este proyecto)
