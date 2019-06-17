@@ -1,2 +1,4 @@
-Instalar wildfly
-Instalar MAMP
+Tener eclipse instalado
+Instalar MAMP+PhpMyAdmin
+Instalar WildFly
+Instalar PostMan
