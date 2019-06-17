@@ -1,0 +1,4 @@
+Tener eclipse instalado
+Instalar MAMP+PhpMyAdmin
+Instalar WildFly
+Instalar PostMan
