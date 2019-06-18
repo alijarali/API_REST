@@ -1,16 +1,20 @@
 package model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table
 public class Censo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private Integer idCenso;
+	private Integer indice;
 	@Column
 	private String ciudad;
 	@Column
@@ -48,6 +52,6 @@ public class Censo {
 
 	@Override
 	public String toString() {
-		return "Censo [idCenso=" + idCenso + ", ciudad=" + ciudad + ", pais=" + pais + ", poblacion=" + poblacion + "]";
+		return "Censo [idCenso=" + indice + ", ciudad=" + ciudad + ", pais=" + pais + ", poblacion=" + poblacion + "]";
 	}
 }

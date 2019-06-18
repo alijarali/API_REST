@@ -1,7 +1,6 @@
 package logic;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
@@ -10,9 +9,9 @@ import model.Censo;
 
 public class GestionCenso {
 //No estoy seguro de que la lista deba iniciarse aquí
-	private static List<Censo> lstCenso = new ArrayList<Censo>();
 
-	public static void addCenso() {
+
+	public static void addCenso(HttpServletRequest request) {
 
 		Censo c = new Censo();
 		c.setCiudad("Unknown!!!!");
@@ -29,7 +28,7 @@ public class GestionCenso {
 
 		System.out.println("Un censo ha sido agregado a la BBDD: " + c);
 	}
-	public static void getCenso() {
+	public static void getCenso(HttpServletRequest request) {
 		Long indice = 1L;
 
 		Session session = HibernateUtil.getSession();
@@ -38,7 +37,7 @@ public class GestionCenso {
 
 		System.out.println("El valor de este censo vale: " + c);
 	}
-	public static void edtCenso() {
+	public static void edtCenso(HttpServletRequest request) {
 		Long indice = 1L;
 
 		Session session = HibernateUtil.getSession();
@@ -53,8 +52,8 @@ public class GestionCenso {
 
 		System.out.println("Censo editado: " + c);
 	}
-	public static void delCenso() {
-		Long indice = 1L;
+	public static void delCenso(HttpServletRequest request) {
+		Integer indice = Integer.parseInt(request.getParameter("indice"));
 
 		Session session = HibernateUtil.getSession();
 		Censo c = session.get(Censo.class, indice);
