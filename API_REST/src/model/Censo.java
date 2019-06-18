@@ -1,8 +1,21 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Censo {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	private Integer idCenso;
+	@Column
 	private String ciudad;
+	@Column
 	private String pais;
+	@Column
 	private Integer poblacion;
 	public Censo() {
 	}
@@ -31,5 +44,10 @@ public class Censo {
 	}
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
+	}
+
+	@Override
+	public String toString() {
+		return "Censo [idCenso=" + idCenso + ", ciudad=" + ciudad + ", pais=" + pais + ", poblacion=" + poblacion + "]";
 	}
 }
