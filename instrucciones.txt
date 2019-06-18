@@ -6,3 +6,12 @@ Instalar WildFly
     Instalar jdk y todo eso
 Instalar PostMan
 (JSP y JSF no hacen falta pa ná en este proyecto)
+
+
+
+
+
+
+Si MAMP no lanza el servidor SQL, hay que hacer lo siguiente:
+  ir a la carpeta donde está instalado-> MAMP/db/mysql 
+  Borrar los archivos con el nombre ib_logfile0 y ib_logfile1
