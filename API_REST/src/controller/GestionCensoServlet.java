@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import logic.GestionCenso;
-
 @WebServlet("/GestionCenso")
 	public class GestionCensoServlet extends HttpServlet {
 		private static final long serialVersionUID = 1L;
@@ -19,6 +17,7 @@ import logic.GestionCenso;
 	        super();
 	    }
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			response.getWriter().append("entro en get....");
 			//response.getWriter().append(GestionCenso.getCenso(request).toString());
 		}
 
@@ -33,6 +32,7 @@ import logic.GestionCenso;
 		}
 		
 		protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			response.getWriter().append("entro en delete....");
 			logic.Delete.doDelete(request);
 		}
 
