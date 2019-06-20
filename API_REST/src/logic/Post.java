@@ -4,12 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
+import controller.Error400;
 import dbm.HibernateUtil;
 import model.Censo;
 
 public class Post {
 
-	public static void doPost(HttpServletRequest request) {
+	public static void doPost(HttpServletRequest request) throws Error400{
 
 			Censo c = new Censo();
 			c.setCiudad("Unknown!!!!");

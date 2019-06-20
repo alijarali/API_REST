@@ -4,12 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
+import controller.Error400;
 import dbm.HibernateUtil;
 import model.Censo;
 
 public class Put {
 
-	public static void doPut(HttpServletRequest request) {
+	public static void doPut(HttpServletRequest request) throws Error400{
 
 		Long indice = 1L;
 

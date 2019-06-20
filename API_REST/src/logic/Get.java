@@ -4,11 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
+import controller.Error400;
+import controller.Error404;
 import dbm.HibernateUtil;
 import model.Censo;
 
 public class Get {
-	public static void doGet(HttpServletRequest request) {
+	public static String doGet(HttpServletRequest request) throws Error400, Error404{
 		Long indice = 1L;
 
 		Session session = HibernateUtil.getSession();
@@ -16,5 +18,6 @@ public class Get {
 		session.close();
 
 		System.out.println("El valor de este censo vale: " + c);
+		return null;
 	}
 }
