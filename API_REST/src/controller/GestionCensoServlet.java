@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.Error400;
-import controller.Error404;
 
 @WebServlet("/GestionCensoServlet")
 	public class GestionCensoServlet extends HttpServlet {
@@ -18,30 +16,26 @@ import controller.Error404;
 	    public GestionCensoServlet() {
 	        super();
 	    }
-	    public static void testApiKey(HttpServletRequest request, HttpServletResponse response) {
-	    	String key = request.getParameter("API_KEY");
-	    	if(key == "123ABC") {
-	    		
-	    	}if(key == "ABC123") {
-	    		
-	    	}
-	    	
-	    }
+	    
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			if(util.CheckApiKey.isApiKey1(request.getParameter("API_KEY"))) {
+			
 			try {
-				response.getWriter().append(logic.Get.doGet(request));
-			}catch(Error400 e){
+				System.out.println("Recibido");
+				response.getWriter().append( logic.Get.doGet(request) );
+			}catch(IndexOutOfBoundsException e){
 				System.out.println("Se ha producido un error 400");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			}catch(Error404 e){
-				System.out.println("Se ha producido un error 404");
-				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			}
+			}else {
+				response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 			}
 		}
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			try{logic.Post.doPost(request);
-			}catch(Error400 e){
+			try{System.out.println("Recibido");
+				logic.Post.doPost(request);
+			}catch(IndexOutOfBoundsException e){
 				System.out.println("Se ha producido un error 400");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			
@@ -49,8 +43,9 @@ import controller.Error404;
 		}
 		
 		protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			try{logic.Put.doPut(request);
-		}catch(Error400 e){
+			try{System.out.println("Recibido");
+				logic.Put.doPut(request);
+		}catch(IndexOutOfBoundsException e){
 			System.out.println("Se ha producido un error 400");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		
@@ -58,9 +53,9 @@ import controller.Error404;
 		}
 		
 		protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			try {
+			try {System.out.println("Recibido");
 			logic.Delete.doDelete(request);
-		}catch(Error404 e){
+		}catch(IndexOutOfBoundsException e){
 			System.out.println("Se ha producido un error 404");
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		}

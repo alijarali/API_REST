@@ -4,15 +4,22 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
-import controller.Error400;
 import dbm.HibernateUtil;
 import model.Censo;
 
 public class Post {
 
-	public static void doPost(HttpServletRequest request) throws Error400{
+	public static void doPost(HttpServletRequest request) throws IndexOutOfBoundsException{
 
 			Censo c = new Censo();
+			//Solo falta el tratamiento del índice.
+			if(request.getParameter("indice")==null) {
+				
+				}else {
+				
+				}
+			
+			
 			if(request.getParameter("ciudad")==null) {
 			c.setCiudad("");
 			}else {

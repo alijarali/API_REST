@@ -14,7 +14,7 @@ public class Censo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private Integer indice;
+	private Long indice;
 	@Column
 	private String ciudad;
 	@Column

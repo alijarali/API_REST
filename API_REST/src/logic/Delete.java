@@ -4,14 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
-import controller.Error404;
 import dbm.HibernateUtil;
 import model.Censo;
 
 public class Delete {
 	
 
-	public static void doDelete(HttpServletRequest request) throws Error404{
+	public static void doDelete(HttpServletRequest request) throws IndexOutOfBoundsException{
 		Integer indice = Integer.parseInt(request.getParameter("indice"));
 
 		Session session = HibernateUtil.getSession();
