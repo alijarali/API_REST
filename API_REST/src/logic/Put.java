@@ -11,12 +11,16 @@ public class Put {
 
 	public static void doPut(HttpServletRequest request) throws IndexOutOfBoundsException{
 
-		Long indice = 1L;
+		Long indice = (long) Integer.parseInt(request.getParameter("indice"));
 
 		Session session = HibernateUtil.getSession();
 		Censo c = session.get(Censo.class, indice);
 		//Aquí faltan cosas seguro, no estamos editando nada si se mira detenidamente
-
+		if(request.getParameter("ciudad")!=null) {
+			c.setCiudad(request.getParameter("ciudad"));
+		}else {
+		
+		}
 		session.beginTransaction();
 		session.update(c);
 		session.getTransaction().commit();
