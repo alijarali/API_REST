@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 	    }
 	    
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			if(util.CheckApiKey.isApiKey1(request.getParameter("API_KEY"))) {
+			if(util.CheckApiKey.isApiKey1(request.getParameter("API_KEY")) || util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))) {
 			
 			try {
 				System.out.println("Recibido");
@@ -28,11 +28,12 @@ import javax.servlet.http.HttpServletResponse;
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			}
 			}else {
-				response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			}
 		}
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
 			try{System.out.println("Recibido");
 				logic.Post.doPost(request);
 			}catch(IndexOutOfBoundsException e){
@@ -40,9 +41,13 @@ import javax.servlet.http.HttpServletResponse;
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			
 		}
+		}else {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+		}
 		}
 		
 		protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
 			try{System.out.println("Recibido");
 				logic.Put.doPut(request);
 		}catch(IndexOutOfBoundsException e){
@@ -50,9 +55,13 @@ import javax.servlet.http.HttpServletResponse;
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		
 	}
+		}else {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+		}
 		}
 		
 		protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
 			try {System.out.println("Recibido");
 			logic.Delete.doDelete(request);
 		}catch(IndexOutOfBoundsException e){
@@ -60,6 +69,9 @@ import javax.servlet.http.HttpServletResponse;
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		}
 
+	}else {
+		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 	}
 		}
+}
 
