@@ -9,7 +9,7 @@ import model.Censo;
 
 public class Post {
 
-	public static void doPost(HttpServletRequest request) throws IndexOutOfBoundsException{
+	public static void doPost(HttpServletRequest request) {
 
 			Censo c = new Censo();
 			//Solo falta el tratamiento del índice.

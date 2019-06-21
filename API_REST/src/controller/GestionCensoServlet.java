@@ -64,7 +64,7 @@ import javax.servlet.http.HttpServletResponse;
 			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
 			try {System.out.println("Recibido");
 			logic.Delete.doDelete(request);
-		}catch(IndexOutOfBoundsException e){
+		}catch(IllegalArgumentException e){
 			System.out.println("Se ha producido un error 404");
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		}

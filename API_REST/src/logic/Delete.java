@@ -10,8 +10,8 @@ import model.Censo;
 public class Delete {
 	
 
-	public static void doDelete(HttpServletRequest request) throws IndexOutOfBoundsException{
-		Integer indice = Integer.parseInt(request.getParameter("indice"));
+	public static void doDelete(HttpServletRequest request) throws IllegalArgumentException{
+		Long indice = (long) Integer.parseInt(request.getParameter("indice"));
 
 		Session session = HibernateUtil.getSession();
 		Censo c = session.get(Censo.class, indice);
