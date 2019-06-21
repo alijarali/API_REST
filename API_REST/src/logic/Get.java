@@ -27,6 +27,7 @@ public class Get {
 public static String ListJSON(String datosCenso) {		
 		
 		Session mySession = HibernateUtil.getSession();
+		
 		return datosCenso;
 		
 	}

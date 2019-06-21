@@ -9,6 +9,7 @@ import dbm.HibernateUtil;
 import model.Censo;
 
 public class Delete {
+	
 
 	public static void doDelete(HttpServletRequest request) throws Error404{
 		Integer indice = Integer.parseInt(request.getParameter("indice"));
@@ -23,7 +24,5 @@ public class Delete {
 		session.close();
 
 		System.out.println("El censo seleccionado ha sido eliminado: " + c);
-		
-	}
-
+}
 }

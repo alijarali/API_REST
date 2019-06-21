@@ -13,9 +13,9 @@ public class Post {
 	public static void doPost(HttpServletRequest request) throws Error400{
 
 			Censo c = new Censo();
-			c.setCiudad("Unknown!!!!");
-			c.setPais("Unknown!!!!");
-			c.setPoblacion(00000000000000);
+			c.setCiudad(request.getParameter("ciudad"));
+			c.setPais(request.getParameter("pais"));
+			c.setPoblacion(Integer.parseInt(request.getParameter("poblacion")));
 
 			Session session = HibernateUtil.getSession();
 
