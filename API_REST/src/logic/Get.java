@@ -27,6 +27,8 @@ public class Get {
 public static String ListJSON(String datosCenso) {		
 		
 		Session mySession = HibernateUtil.getSession();
+		//ObjectMapper mapper = new ObjectMapper();
+		//String jsonString = mapper.writeValueAsString(datosCenso);
 		
 		return datosCenso;
 		
