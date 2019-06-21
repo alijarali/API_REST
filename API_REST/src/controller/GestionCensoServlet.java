@@ -36,7 +36,7 @@ import javax.servlet.http.HttpServletResponse;
 			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
 			try{System.out.println("Recibido");
 				logic.Post.doPost(request);
-			}catch(IndexOutOfBoundsException e){
+			}catch(Exception e){
 				System.out.println("Se ha producido un error 400");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			
@@ -48,21 +48,22 @@ import javax.servlet.http.HttpServletResponse;
 		
 		protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
-			try{System.out.println("Recibido");
-				try {
-					logic.Put.doPut(request);
-				} catch (Exception e) {
+			
+				try {					logic.Put.doPut(request);}
+				 catch (Exception e) {
 					response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 				}
-		}catch(IndexOutOfBoundsException e){
-			System.out.println("Se ha producido un error 400");
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		catch(IllegalArgumentException e){
+			System.out.println("Se ha producido un error 404");
+			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		
-	}
-		}else {
+	}}
+	
+		else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		}
 		}
+
 		
 		protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){

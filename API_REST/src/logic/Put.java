@@ -9,7 +9,7 @@ import model.Censo;
 
 public class Put {
 
-	public static void doPut(HttpServletRequest request) throws IndexOutOfBoundsException, Exception{
+	public static void doPut(HttpServletRequest request) throws IllegalArgumentException, Exception{
 
 		Long indice = (long) Integer.parseInt(request.getParameter("indice"));
 
