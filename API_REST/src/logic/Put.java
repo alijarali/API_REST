@@ -9,7 +9,7 @@ import model.Censo;
 
 public class Put {
 
-	public static void doPut(HttpServletRequest request) throws IndexOutOfBoundsException{
+	public static void doPut(HttpServletRequest request) throws IndexOutOfBoundsException, Exception{
 
 		Long indice = (long) Integer.parseInt(request.getParameter("indice"));
 
@@ -21,6 +21,24 @@ public class Put {
 		}else {
 		
 		}
+		
+		if(request.getParameter("pais")!=null) {
+			c.setCiudad(request.getParameter("pais"));
+		}else {
+		
+		}
+		
+		if(request.getParameter("poblacion")!=null) {
+			
+			if(Integer.parseInt(request.getParameter("poblacion"))<0) {
+			throw new Exception("Poblacion no valida");}
+			else {
+				c.setCiudad(request.getParameter("poblacion"));
+				}}else {}
+			
+		
+		
+	
 		session.beginTransaction();
 		session.update(c);
 		session.getTransaction().commit();
