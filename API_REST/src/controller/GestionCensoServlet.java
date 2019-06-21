@@ -49,7 +49,11 @@ import javax.servlet.http.HttpServletResponse;
 		protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			if(util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))){
 			try{System.out.println("Recibido");
-				logic.Put.doPut(request);
+				try {
+					logic.Put.doPut(request);
+				} catch (Exception e) {
+					response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+				}
 		}catch(IndexOutOfBoundsException e){
 			System.out.println("Se ha producido un error 400");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

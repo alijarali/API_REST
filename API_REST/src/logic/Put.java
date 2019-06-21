@@ -23,7 +23,7 @@ public class Put {
 		}
 		
 		if(request.getParameter("pais")!=null) {
-			c.setCiudad(request.getParameter("pais"));
+			c.setPais(request.getParameter("pais"));
 		}else {
 		
 		}
@@ -33,7 +33,7 @@ public class Put {
 			if(Integer.parseInt(request.getParameter("poblacion"))<0) {
 			throw new Exception("Poblacion no valida");}
 			else {
-				c.setCiudad(request.getParameter("poblacion"));
+				c.setPoblacion(Integer.parseInt(request.getParameter("poblacion")));
 				}}else {}
 			
 		
