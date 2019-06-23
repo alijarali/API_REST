@@ -1,71 +1,37 @@
 package logic;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
 
 import com.google.gson.Gson;
 
-
 import dbm.HibernateUtil;
+
 import model.Censo;
-import util.Map;
+
+
 
 public class Get {
+	private static List<Censo> LstCenso = new ArrayList<Censo>();
+	
 	 public static String doGet(HttpServletRequest request) throws IndexOutOfBoundsException {
-		Session session = HibernateUtil.getSession();
-		Censo c = session.get(Censo.class, indice);
+		String datosCenso ="";
 		
-		Map<String, String[]> mapaPar = request.getParameterMap();
-		Integer indice = null;
-		String ciudad = request.getParameter("ciudad");
-		String pais = request.getParameter("pais");
-		Integer poblacion = null;
-		Integer from = null;
-		Integer to=null;
-		
-		if(mapaPar.containsKey("indice")) {
-			indice=Integer.parseInt(request.getParameter("indice"));
+		if(request.getParameter("pos") != null) {
+			int indice = Integer.parseInt(request.getParameter("pos"));
+			datosCenso = new Gson().toJson(lstCenso.get(indice));
+		}else {
+			datosCenso = new Gson().toJson(lstCenso);
 		}
-		
-		if(mapaPar.containsKey("poblacion")) {
-			if(poblacion=Integer.parseInt(request.getParameter("poblacion"))<0) {
-				throw new Exception("Poblacion no valida");
-			}else {
-				c.setPoblacion(Integer.parseInt(request.getParameter("poblacion")));	
-		}}else {
-		}
-		
-		if(mapaPar.containsKey("from")) {
-			from=Integer.parseInt(request.getParameter("from"));
-		}
-		if(mapaPar.containsKey("to")) {
-			to=Integer.parseInt(request.getParameter("to"));
-		}
-		
-		return ListJSON(indice, ciudad, pais, poblacion, to, from);
-	 }
-		
-		/*Long indice = 1L;
-		String datosCenso = null;*/
-		//lenguaje nativo de consulta mirar
-		
-		session.close();
-		
-		
-		return datosCenso;
-		
-
-	}
-
-	@SuppressWarnings("unused")
-	public static String ListJSON(String datosCenso) {
-
-		Session mySession = HibernateUtil.getSession();
-		// ObjectMapper mapper = new ObjectMapper();
-		// String jsonString = mapper.writeValueAsString(datosCenso);
-
 		return datosCenso;
 
+	 Session mySession = HibernateUtil.getSession();
+	 query = mySession.createQuery("CONSULTA A LA BD");
+	 List<Censo> lista = query.list();
+	 mySession.close();
 	}
+
 }
