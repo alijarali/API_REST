@@ -15,7 +15,7 @@ public class Put {
 
 		Session session = HibernateUtil.getSession();
 		Censo c = session.get(Censo.class, indice);
-		//Aquí faltan cosas seguro, no estamos editando nada si se mira detenidamente
+	
 		if(request.getParameter("ciudad")!=null) {
 			c.setCiudad(request.getParameter("ciudad"));
 		}else {
@@ -31,7 +31,7 @@ public class Put {
 		if(request.getParameter("poblacion")!=null) {
 			
 			if(Integer.parseInt(request.getParameter("poblacion"))<0) {
-			throw new Exception("Poblacion no valida");}
+			throw new Exception();}
 			else {
 				c.setPoblacion(Integer.parseInt(request.getParameter("poblacion")));
 				}}else {}

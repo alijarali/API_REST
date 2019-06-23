@@ -12,13 +12,7 @@ public class Post {
 	public static void doPost(HttpServletRequest request) throws Exception{
 
 			Censo c = new Censo();
-			//Solo falta el tratamiento del índice.
-			if(request.getParameter("indice")==null) {
-				
-				}else {
-				
-				}
-			
+					
 			
 			if(request.getParameter("ciudad")==null) {
 			c.setCiudad("");
@@ -33,7 +27,11 @@ public class Post {
 			}
 			if(request.getParameter("poblacion")==null) {
 			c.setPoblacion(0);
-			}else {
+			}else if(Integer.parseInt(request.getParameter("poblacion"))<0){
+				throw new Exception();
+			}
+					
+			else {
 			c.setPoblacion(Integer.parseInt(request.getParameter("poblacion")));
 			}
 
