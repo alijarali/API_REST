@@ -21,7 +21,7 @@ public class Get {
 		String datosCenso ="";
 		
 		if(request.getParameter("indice") != null) {
-			int indice = Long.parseLong(request.getParameter("indice"));
+			Long indice = Long.parseLong(request.getParameter("indice"));
 			datosCenso = new Gson().toJson(lstCenso.get(indice));
 		}else {
 			datosCenso = new Gson().toJson(lstCenso);
