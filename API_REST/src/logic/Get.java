@@ -20,8 +20,8 @@ public class Get {
 	 public static String doGet(HttpServletRequest request) throws IndexOutOfBoundsException {
 		String datosCenso ="";
 		
-		if(request.getParameter("pos") != null) {
-			int indice = Integer.parseInt(request.getParameter("pos"));
+		if(request.getParameter("indice") != null) {
+			int indice = Long.parseLong(request.getParameter("indice"));
 			datosCenso = new Gson().toJson(lstCenso.get(indice));
 		}else {
 			datosCenso = new Gson().toJson(lstCenso);
@@ -32,12 +32,12 @@ public class Get {
 	 query = mySession.createQuery("CONSULTA A LA BD");
 	 List<Censo> lista = query.list();
 	 mySession.close();
-	}
+	
 	 //Consulta a la base de datos
 	 String queryString = "";
 		
 		if(indice != null) {
-			//Consulto buscando por ID
+			//Consulto buscando por indice
 			queryString = "FROM Censo c WHERE C.indice =:indice";
 		}else {
 			//Consulta generica a la que se le iran añadiendo condiciones segun el caso
@@ -77,6 +77,7 @@ public class Get {
 
 		List<Censo> lista = query.list();
 		mySession.close();
+	 }
 
 }
 		
