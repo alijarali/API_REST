@@ -10,13 +10,16 @@ Permite:
  - Hacer consultas a la base de datos.
  
  # Instalación
--Tener eclipse instalado
--Instalar MAMP+PhpMyAdmin
--Instalar WildFly
--Copiar la carpeta en el disco C:
--New server runtime environment
--Instalar jdk
--Instalar PostMan
+ 
+ - Tener eclipse instalado
+ - Instalar MAMP+PhpMyAdmin
+ - Instalar WildFly
+ - Copiar la carpeta en el disco C:
+ - New server runtime environment
+ - Instalar MAMP+PhpMyAdmin
+ - Instalar jdk
+ - Instalar PostMan
+
 
 Si MAMP no lanza el servidor SQL, hay que hacer lo siguiente:
 
