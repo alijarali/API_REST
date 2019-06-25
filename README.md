@@ -50,7 +50,7 @@ https://stackoverflow.com/questions/54296014/mysql-server-on-mamp-windows-will-n
  - GSON: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
  
  ## Autores ✒️
- * **Alejandro Martínez de la Haba ** - [alexdelahaba](https://github.com/alexdelahaba)
+ * **Alejandro Martínez de la Haba** -[alexdelahaba](https://github.com/alexdelahaba)
  * **Leonor López Miranda** - [LeonorLM04](https://github.com/LeonorLM04)
  * **Alicia Rojo Monedero** - [alijarali](https://github.com/alijarali)
  
