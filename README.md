@@ -8,5 +8,23 @@ Permite:
  - Modificar entradas.
  - Borrar entradas.
  - Hacer consultas a la base de datos.
+ 
+ # Instalación
+-Tener eclipse instalado
+-Instalar MAMP+PhpMyAdmin
+-Instalar WildFly
+-Copiar la carpeta en el disco C:
+-New server runtime environment
+-Instalar jdk
+-Instalar PostMan
+
+Si MAMP no lanza el servidor SQL, hay que hacer lo siguiente:
+
+ Ir a la carpeta donde está instalado-> MAMP/db/mysql 
+ 
+ Borrar los archivos con el nombre ib_logfile0 y ib_logfile1
+
+Si aún así no funciona:
+https://stackoverflow.com/questions/54296014/mysql-server-on-mamp-windows-will-not-start
 
 Enlaces a .jar que hay que incluir en el proyecto:
