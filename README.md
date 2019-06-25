@@ -31,3 +31,4 @@ Si aún así no funciona:
 https://stackoverflow.com/questions/54296014/mysql-server-on-mamp-windows-will-not-start
 
 # Enlaces a .jar que hay que incluir en el proyecto:
+ - GSON: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
