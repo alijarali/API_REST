@@ -2,11 +2,16 @@ package controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import exceptions.IndexNotEspecified;
+import exceptions.NegativePopulationException;
+
 
 @WebServlet("/GestionCensoServlet")
 public class GestionCensoServlet extends HttpServlet {
@@ -18,6 +23,7 @@ public class GestionCensoServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		if (util.CheckApiKey.isApiKey1(request.getParameter("API_KEY"))
 				|| util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))) {
 
@@ -25,25 +31,35 @@ public class GestionCensoServlet extends HttpServlet {
 				System.out.println("Recibido");
 				response.getWriter().append(logic.Get.doGet(request));
 			} catch (IndexOutOfBoundsException e) {
-				System.out.println("Se ha producido un error 400");
+				System.out.println("Se ha producido un error 404");
+				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+			} catch (IllegalArgumentException e) {
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			}
+
+			} 
+			catch (Exception e) {
+				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+
+			} 
 		} else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException, NegativePopulationException {
 		if (util.CheckApiKey.isApiKey2(request.getParameter("API_KEY"))) {
 			try {
 				System.out.println("Recibido");
 				logic.Post.doPost(request);
-			} catch (Exception e) {
-				System.out.println("Se ha producido un error 400");
+			} catch (NegativePopulationException e) {
+				System.out.println("Se ha producido un error 400, la población introducida es <0");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-			}
+			}catch (Exception e) {
+				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+
+			} 
 		} else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		}
@@ -55,15 +71,22 @@ public class GestionCensoServlet extends HttpServlet {
 
 			try {
 				logic.Put.doPut(request);
-			}catch (IllegalArgumentException e) {
-				System.out.println("Se ha producido un error 404");
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("Se ha producido un error 404, el elemento no ha sido encontrado");
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
-			} 
-			
-			catch (Exception e) {
+			}
+
+			catch (NegativePopulationException e) {
+				System.out.println("Se ha producido un error 400, la población introducida es <0");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+			}
+			catch (Exception e) {
+				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+
 			} 
+
 		}
 
 		else {
@@ -77,13 +100,23 @@ public class GestionCensoServlet extends HttpServlet {
 			try {
 				System.out.println("Recibido");
 				logic.Delete.doDelete(request);
-			} catch (IllegalArgumentException e) {
-				System.out.println("Se ha producido un error 404");
+			}catch (IndexNotEspecified e) {
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-			}
+
+			} 
+			catch (IndexOutOfBoundsException e) {
+				System.out.println("Se ha producido un error 404, el elemento no ha sido encontrado");
+				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+				
+			}catch (Exception e) {
+				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+
+			} 
 
 		} else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+
 		}
 	}
+
 }

@@ -5,11 +5,12 @@ import javax.servlet.http.HttpServletRequest;
 import org.hibernate.Session;
 
 import dbm.HibernateUtil;
+import exceptions.NegativePopulationException;
 import model.Censo;
 
 public class Post {
 
-	public static void doPost(HttpServletRequest request) throws Exception{
+	public static void doPost(HttpServletRequest request) throws NegativePopulationException{
 
 			Censo c = new Censo();
 					
@@ -28,7 +29,7 @@ public class Post {
 			if(request.getParameter("poblacion")==null) {
 			c.setPoblacion(0);
 			}else if(Integer.parseInt(request.getParameter("poblacion"))<0){
-				throw new Exception();
+				throw new NegativePopulationException();
 			}
 					
 			else {
