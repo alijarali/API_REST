@@ -14,11 +14,16 @@ Permite:
 Mediante GET vamos a poder obtener los censos de nuestra base de datos. Dependiendo de los parámentros que introduzcamos, obtendremos diferentes resultados: 
  - Ningún parámetro: Devuelve un array con todas las entradas.
  - Indice: Nos devuelve la entrada con ese índice
- - Alguno de los atributos de la clase: Devuelve aquellas instancias cuyos valores en sus atributos sean iguales a los indicados.
- - from: Devuelve todas las instancias con índice mayor o igual al valor indicado.
- - to: Devuelve todas las instancias con índice menor o igual al valor indicado. Si no encuentra ninguna coincidencia en los casos anteriores se devuelve un código 404.
-  - sort: Devuelve todas las instancias ordenadas ascendentemente por el nombre del atributo indicado como valor. Si el nombre del atributo no es válido se devuelve un código 400.
+ - Alguno de los atributos de la clase: Devuelve aquellos censos cuyos valores en sus atributos sean iguales a los indicados.
+ - from: Devuelve todas las entradas con índice mayor o igual al valor indicado.
+ - to: Devuelve todas las entradas con índice menor o igual al valor indicado. Si no encuentra ninguna coincidencia en los casos anteriores se devuelve un código 404.
+  - sort: Devuelve todas las entradas ordenadas ascendentemente por el nombre del atributo indicado como valor. Si el nombre del atributo no es válido se devuelve un código 400.
 
+Mediante POST podremos añadir un censo a la base de datos.
+
+Con PUT podemos modificar un censo ya existente.
+
+Y mediante DELETE se puede eliminar un censo.
  
  # Instalación 🔧
  
