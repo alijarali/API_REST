@@ -13,7 +13,7 @@ Permite:
  
  - Tener eclipse instalado
  - Instalar MAMP+PhpMyAdmin
- - Instalar WildFly
+ - Instalar WildFly o TomCat
  - Copiar la carpeta en el disco C:
  - New server runtime environment
  - Instalar MAMP+PhpMyAdmin
@@ -30,4 +30,4 @@ Si MAMP no lanza el servidor SQL, hay que hacer lo siguiente:
 Si aún así no funciona:
 https://stackoverflow.com/questions/54296014/mysql-server-on-mamp-windows-will-not-start
 
-Enlaces a .jar que hay que incluir en el proyecto:
+# Enlaces a .jar que hay que incluir en el proyecto:
