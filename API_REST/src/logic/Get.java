@@ -18,7 +18,7 @@ public class Get {
 	public static List<Censo> lstCenso = new ArrayList<Censo>();
 
 	public static String doGet(HttpServletRequest request) throws IndexOutOfBoundsException, IllegalArgumentException {
-		
+
 		String ciudad;
 		String pais;
 		Integer poblacion;
@@ -42,9 +42,9 @@ public class Get {
 		} else {
 			pais = null;
 		}
-		
+
 		sort = request.getParameter("sort");
-		
+
 		if (request.getParameter("from") != null) {
 			from = Long.parseLong(request.getParameter("from"));
 		} else {
@@ -60,8 +60,6 @@ public class Get {
 		} else {
 			indice = null;
 		}
-		
-
 
 		Session Session = HibernateUtil.getSession();
 		if (indice != null) {
@@ -76,14 +74,13 @@ public class Get {
 			}
 		}
 
-		
 		String queryString = "";
 
 		if (indice != null) {
-			
+
 			queryString = "FROM Censo C WHERE C.indice =:indice";
 		} else {
-			
+
 			queryString = "FROM Censo C WHERE 1=1";
 
 			if (ciudad != null)
@@ -93,7 +90,7 @@ public class Get {
 			if (poblacion != null)
 				queryString += " and C.poblacion =:poblacion";
 			if (from != null) {
-				
+
 				queryString += " and C.indice >=:from";
 			}
 			if (to != null)
@@ -112,23 +109,23 @@ public class Get {
 			if (poblacion != null)
 				query.setParameter("poblacion", poblacion);
 			if (from != null) {
-				
+
 				query.setParameter("from", from);
 			}
-				
+
 			if (to != null)
 				query.setParameter("to", to);
 		}
-		
+
 		List<Censo> lista = query.list();
-		
+
 		Session.close();
 		if (lista.size() == 0) {
 			throw new IndexOutOfBoundsException();
 		} else {
 			return new Gson().toJson(lista);
 		}
-		
+
 	}
 
 }

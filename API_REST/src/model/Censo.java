@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Censo {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -21,9 +21,10 @@ public class Censo {
 	private String pais;
 	@Column
 	private Integer poblacion;
+
 	public Censo() {
 	}
-	
+
 	public Censo(String ciudad, String pais, Integer poblacion) {
 		super();
 		this.ciudad = ciudad;
@@ -34,18 +35,23 @@ public class Censo {
 	public Integer getPoblacion() {
 		return poblacion;
 	}
+
 	public void setPoblacion(Integer poblacion) {
 		this.poblacion = poblacion;
 	}
+
 	public String getPais() {
 		return pais;
 	}
+
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
+
 	public String getCiudad() {
 		return ciudad;
 	}
+
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}

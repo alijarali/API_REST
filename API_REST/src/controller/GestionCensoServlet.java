@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import exceptions.IndexNotEspecified;
 import exceptions.NegativePopulationException;
-
 
 @WebServlet("/GestionCensoServlet")
 public class GestionCensoServlet extends HttpServlet {
@@ -36,11 +34,10 @@ public class GestionCensoServlet extends HttpServlet {
 			} catch (IllegalArgumentException e) {
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-			} 
-			catch (Exception e) {
+			} catch (Exception e) {
 				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 
-			} 
+			}
 		} else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		}
@@ -56,10 +53,10 @@ public class GestionCensoServlet extends HttpServlet {
 				System.out.println("Se ha producido un error 400, la población introducida es <0");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-			}catch (Exception e) {
+			} catch (Exception e) {
 				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 
-			} 
+			}
 		} else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		}
@@ -81,11 +78,10 @@ public class GestionCensoServlet extends HttpServlet {
 				System.out.println("Se ha producido un error 400, la población introducida es <0");
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 
-			} 
+			}
 
 		}
 
@@ -100,18 +96,17 @@ public class GestionCensoServlet extends HttpServlet {
 			try {
 				System.out.println("Recibido");
 				logic.Delete.doDelete(request);
-			}catch (IndexNotEspecified e) {
+			} catch (IndexNotEspecified e) {
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
-			} 
-			catch (IndexOutOfBoundsException e) {
+			} catch (IndexOutOfBoundsException e) {
 				System.out.println("Se ha producido un error 404, el elemento no ha sido encontrado");
 				response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-				
-			}catch (Exception e) {
+
+			} catch (Exception e) {
 				response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
 
-			} 
+			}
 
 		} else {
 			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

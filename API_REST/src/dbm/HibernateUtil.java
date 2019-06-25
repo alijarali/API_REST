@@ -13,10 +13,7 @@ public class HibernateUtil {
 
 	private static void buildSessionFactory() {
 		try {
-			sessionFactory = new Configuration()
-					.addAnnotatedClass(Censo.class)
-					.configure()
-					.buildSessionFactory();
+			sessionFactory = new Configuration().addAnnotatedClass(Censo.class).configure().buildSessionFactory();
 		} catch (Exception e) {
 			System.out.println("Error al conectar con la BD. " + e.getMessage());
 		}

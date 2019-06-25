@@ -1,0 +1,3797 @@
+{
+	"info": {
+		"_postman_id": "f2cac115-8f16-47a9-a313-644fc4119e5b",
+		"name": "Gestion Censo BBDD, colección de tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests Api Key",
+			"item": [
+				{
+					"name": "1.X Pruebas Positivas",
+					"item": [
+						{
+							"name": "1.1 Acceder a get con apikey correcta tipo 1(user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "af20d0ac-d427-42b4-b45a-921b87332721",
+										"exec": [
+											"tests[\"Nada que consultar\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=ABC123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "ABC123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.2 Acceder a post con apikey correcta tipo 1(user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "af20d0ac-d427-42b4-b45a-921b87332721",
+										"exec": [
+											"tests[\"No se puede acceder al servicio.\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=ABC123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "ABC123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.3 Acceder a put con apikey correcta tipo 1(user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "af20d0ac-d427-42b4-b45a-921b87332721",
+										"exec": [
+											"tests[\"No se puede acceder al servicio.\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=ABC123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "ABC123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.4 Acceder a delete con apikey correcta tipo 1(user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "af20d0ac-d427-42b4-b45a-921b87332721",
+										"exec": [
+											"tests[\"No se puede acceder al servicio.\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=ABC123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "ABC123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.5 Acceder a get con apikey correcta tipo 2(premium)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94bcbc0a-307d-4a32-9466-fa9e31cde9e4",
+										"exec": [
+											"tests[\"Nada que consultar\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.6 Acceder a post con apikey correcta tipo 2(premium)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94bcbc0a-307d-4a32-9466-fa9e31cde9e4",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.7 Acceder con apikey incorrecta",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f49499b8-d8ff-494d-879b-89f32aa58315",
+										"exec": [
+											"tests[\"No se puede acceder al servicio.\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=zzzz5784",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "zzzz5784"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.8 Acceder sin indicar apikey",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8b17e4da-a547-4dec-b098-55e2b0a681c4",
+										"exec": [
+											"tests[\"No se puede acceder al servicio.\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "zzzz5784",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1.9 Acceder con apikey incorrecta (escrita en minúscula)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46baef06-ffbd-4dd6-8eae-961d35956250",
+										"exec": [
+											"tests[\"No se puede acceder al servicio.\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=abc123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "abc123"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "2.X Pruebas Negativas",
+					"item": [
+						{
+							"name": "2.1 Acceder a put con apikey correcta tipo 2(premium)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94bcbc0a-307d-4a32-9466-fa9e31cde9e4",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.2 Acceder a delete con apikey correcta tipo 2(premium)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "94bcbc0a-307d-4a32-9466-fa9e31cde9e4",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "73c355a4-a38f-4206-8042-9eca7ee74805",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5072d77-7232-4ff0-baa5-0e022ad33ea7",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Test Post",
+			"item": [
+				{
+					"name": "3.X Pruebas Positivas",
+					"item": [
+						{
+							"name": "3.1 Post indicando los tres parámetros con datos lógicos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla&pais=España&poblacion=900000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										},
+										{
+											"key": "poblacion",
+											"value": "900000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.2 Post indicando los tres parámetros con datos lógicos e indicando índice",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla&pais=España&poblacion=900000&indice =1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										},
+										{
+											"key": "poblacion",
+											"value": "900000"
+										},
+										{
+											"key": "indice ",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.3 Post indicando dos parámetros sin indicar ciudad",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&pais=España&poblacion=900000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										},
+										{
+											"key": "poblacion",
+											"value": "900000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.4 Post indicando dos parámetros sin indicar pais",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla&poblacion=900000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.5 Post indicando dos parámetros sin indicar poblacion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla&pais=España",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.6 Post indicando solo ciudad",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.7 Post indicando solo pais",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&pais=España",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.8 Post indicando solo poblacion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&poblacion=900000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.9 Post no indicando nada",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.10 Post indicando un valor no contemplado",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&poblacion=9&km2=852",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "9"
+										},
+										{
+											"key": "km2",
+											"value": "852"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.11 Post no indicando nada",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"No se ha especificado api key\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC",
+											"disabled": true
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.12 Post indicando poblacion negativa",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Población negativa\"] = responseCode.code === 400;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla&pais=España&poblacion=-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										},
+										{
+											"key": "poblacion",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "4.X Pruebas Negativas",
+					"item": [
+						{
+							"name": "4.1 Post cambiando tipos de dato (String <->Integer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Se ha modificado un dato.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=1&pais=1&poblacion=Sevilla",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "1"
+										},
+										{
+											"key": "pais",
+											"value": "1"
+										},
+										{
+											"key": "poblacion",
+											"value": "Sevilla"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4.2 Post indicando un valor de población mayor al indicado en la BBDD",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"Se ha modificado un elemento.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&poblacion=9999999999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "9999999999"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Test Put",
+			"item": [
+				{
+					"name": "5.X Pruebas positivas",
+					"item": [
+						{
+							"name": "5.1 Put para cambiar el dato ciudad por otro String",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&ciudad=Córdoba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba"
+										},
+										{
+											"key": "pais",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.2 Put para cambiar el dato pais por otro String",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&pais=Suecia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "Suecia"
+										},
+										{
+											"key": "poblacion",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.3 Put para cambiar el dato poblacion por otro Integer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&poblacion=87",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "Suecia",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "87"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.4 Put para cambiar los dato ciudad y pais por otros Strings",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=3&ciudad=Córdoba&pais=Suecia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "3"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba"
+										},
+										{
+											"key": "pais",
+											"value": "Suecia"
+										},
+										{
+											"key": "poblacion",
+											"value": "87",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.5 Put para cambiar todos los dato por otros (Strings por String, Integer por Integer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Se accede con normalidad al servicio.\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=5&ciudad=Barcelona&pais=Rusia&poblacion=12000000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "5"
+										},
+										{
+											"key": "ciudad",
+											"value": "Barcelona"
+										},
+										{
+											"key": "pais",
+											"value": "Rusia"
+										},
+										{
+											"key": "poblacion",
+											"value": "12000000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.6 Put para cambiar todos los datos de un elemento que no existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"No se encuentra el elemento.\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=99&ciudad=Córdoba&pais=Suecia&poblacion=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "99"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba"
+										},
+										{
+											"key": "pais",
+											"value": "Suecia"
+										},
+										{
+											"key": "poblacion",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.7 Put para cambiar el dato poblacion por un valor negativo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Modificación prohibida.\"] = responseCode.code === 400;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&poblacion=-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "Suecia",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.8 Put con índice negativo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Elemento no encontrado\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=-5&ciudad=Sevilla&pais=Portugal&poblacion=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "-5"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "pais",
+											"value": "Portugal"
+										},
+										{
+											"key": "poblacion",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.9 Put sin especificar índice",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Error inesperado\"] = responseCode.code === 503;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&poblacion=Cero",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "Suecia",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "Cero"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.10 Put sin especificar ningún cambio",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Funciona correctamente\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "Suecia",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "Cero",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5.11 Put no indicando nada",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"No se ha especificado api key\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC",
+											"disabled": true
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "6.X Pruebas negativas",
+					"item": [
+						{
+							"name": "6.1 Put indicando valor Integer en formato Double",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "93812a9c-3205-43eb-8e66-0213ea054700",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=8&poblacion=87.5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "8"
+										},
+										{
+											"key": "poblacion",
+											"value": "87.5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6.2 Put indicando valor indice incoherente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "93812a9c-3205-43eb-8e66-0213ea054700",
+										"exec": [
+											"tests[\"Elemento no encontrado\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=9999999999999999999999&poblacion=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "9999999999999999999999"
+										},
+										{
+											"key": "poblacion",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6.3 Put para cambiar el dato poblacion por un String",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Valor no válido\"] = responseCode.code === 400;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&poblacion=Cero",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "Córdoba",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "Suecia",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "Cero"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6.4 Put para cambiar los datos por otros mayores a los especificados en la BBDD",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "40833f46-50fb-455a-9b10-768d554e6064",
+										"exec": [
+											"tests[\"Elemento modificado\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2&ciudad=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&pais=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&poblacion=99999999999999999999999999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2"
+										},
+										{
+											"key": "ciudad",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+										},
+										{
+											"key": "pais",
+											"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+										},
+										{
+											"key": "poblacion",
+											"value": "99999999999999999999999999"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Test Delete",
+			"item": [
+				{
+					"name": "7.X Pruebas Positivas",
+					"item": [
+						{
+							"name": "7.1 Delete especificando índice que si existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c074953e-b267-4bdc-97e2-5216c266044a",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.2 Delete especificando índice que no existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46adbc60-3e7f-4125-a18d-979ccea7cc8f",
+										"exec": [
+											"tests[\"No se ha encontrado el elemento\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "999"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.3 Delete sin especificar índice",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46adbc60-3e7f-4125-a18d-979ccea7cc8f",
+										"exec": [
+											"tests[\"No se ha encontrado el elemento\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.4 Delete especificando índice negativo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8e60726e-54af-49ff-9108-cea228716a56",
+										"exec": [
+											"tests[\"No se ha encontrado el elemento\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.5 Delete especificando índice escrito en letra",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "32323a49-f7a2-446d-8599-849279c98a3d",
+										"exec": [
+											"tests[\"Error inesperado\"] = responseCode.code === 503;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=doce",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "doce"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.6 Delete no indicando nada",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82d726da-5fd3-40e6-aa6c-077d53cca25e",
+										"exec": [
+											"tests[\"No se ha especificado api key\"] = responseCode.code === 401;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC",
+											"disabled": true
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "900000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7.7 Delete especificando índice en formato double",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46adbc60-3e7f-4125-a18d-979ccea7cc8f",
+										"exec": [
+											"tests[\"Error inesperado\"] = responseCode.code === 503;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=1.2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "1.2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "8.X Pruebas Negativas",
+					"item": [
+						{
+							"name": "8.1 Delete especificando índice que si existe pero sin indicar apikey",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c074953e-b267-4bdc-97e2-5216c266044a",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?indice=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC",
+											"disabled": true
+										},
+										{
+											"key": "indice",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "8.2 Delete especificando índice de un elemento borrado anteriormente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c074953e-b267-4bdc-97e2-5216c266044a",
+										"exec": [
+											"tests[\"Servicio funcionando con normalidad\"] = responseCode.code === 200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "8.3 Delete especificando índice mayor al especificado en BBDD",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46adbc60-3e7f-4125-a18d-979ccea7cc8f",
+										"exec": [
+											"tests[\"No se ha encontrado el elemento\"] = responseCode.code === 404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=999999999999999999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "999999999999999999"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Test Get",
+			"item": [
+				{
+					"name": "9.X Pruebas Positivas",
+					"item": [
+						{
+							"name": "9.1 Get un elemento indice0",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b2e87722-c64c-4f33-915a-509cbb32b9ee",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "1"
+										},
+										{
+											"key": "ciudad",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "poblacion",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "from",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.2 Get todos los elementos con algun/os error",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e82ef422-20e6-4c78-bcf5-1951589ed9b7",
+										"exec": [
+											"tests[\"No se ha encontrado, puede que algun/os parámetros sean incorrectos\"]=responseCode.code===404;",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "99"
+										}
+									]
+								},
+								"description": "Prueba positiva: Consiste en pedir que muestre un array con todas las instancias, en el caso de que no exista ninguna devolverá un código 404."
+							},
+							"response": []
+						},
+						{
+							"name": "9.3 Get todos los elementos correctos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c001a004-cd9a-42eb-878d-2dc2c232c3ab",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla&poblacion=0&pais=España",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										},
+										{
+											"key": "poblacion",
+											"value": "0"
+										},
+										{
+											"key": "indice",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										}
+									]
+								},
+								"description": "Prueba positiva: Consiste en pedir que muestre un array con todas las instancias, devolverá un código 200."
+							},
+							"response": []
+						},
+						{
+							"name": "9.4 Get un elemento por ciudad existente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b9a299f4-3097-4673-917d-48f79370d3fe",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Sevilla",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Sevilla"
+										}
+									]
+								},
+								"description": "Prueba positiva:Devolverá aquellas instancias cuyos valores en sus atributos sean iguales a los indicados. Devolverá un código 200."
+							},
+							"response": []
+						},
+						{
+							"name": "9.5 Get un elemento por ciudad no existente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b9a299f4-3097-4673-917d-48f79370d3fe",
+										"exec": [
+											"tests[\"No se encuentra dicha ciudad\"]=responseCode.code===404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&ciudad=Madrid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "ciudad",
+											"value": "Madrid"
+										}
+									]
+								},
+								"description": "Prueba positiva:Devolverá aquellas instancias cuyos valores en sus atributos sean iguales a los indicados. Si no enucuentra ninguna coincidencia se devuelve un código 404."
+							},
+							"response": []
+						},
+						{
+							"name": "9.6 Get un elemento por pais existente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "047cef12-17aa-4539-8906-7b57bc398b35",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&pais=España",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "pais",
+											"value": "España"
+										}
+									]
+								},
+								"description": "Prueba positiva:Devolverá aquellas instancias cuyos valores en sus atributos sean iguales a los indicados. Devolverá un código 200."
+							},
+							"response": []
+						},
+						{
+							"name": "9.7 Get un elemento por pais no existente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "047cef12-17aa-4539-8906-7b57bc398b35",
+										"exec": [
+											"tests[\"No existe dicho país\"]=responseCode.code===404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&pais=Congo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "pais",
+											"value": "Congo"
+										}
+									]
+								},
+								"description": "Prueba positiva:Devolverá aquellas instancias cuyos valores en sus atributos sean iguales a los indicados. Si no enucuentra ninguna coincidencia se devuelve un código 404."
+							},
+							"response": []
+						},
+						{
+							"name": "9.8 Get un elemento por poblacion existente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "61979de5-82ae-4f04-9e46-c073167085c0",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&poblacion=900000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "poblacion",
+											"value": "900000"
+										}
+									]
+								},
+								"description": "Prueba positiva:Devolverá aquellas instancias cuyos valores en sus atributos sean iguales a los indicados. Si enucuentra coincidencia se devuelve un código 200."
+							},
+							"response": []
+						},
+						{
+							"name": "9.9 Get un elemento por poblacion no existente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "61979de5-82ae-4f04-9e46-c073167085c0",
+										"exec": [
+											"tests[\"No existe ningun pais o ciudad con esa población en la base de datos.\"]=responseCode.code===404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&poblacion=200",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "poblacion",
+											"value": "200"
+										}
+									]
+								},
+								"description": "Prueba positiva:Devolverá aquellas instancias cuyos valores en sus atributos sean iguales a los indicados. Si no enucuentra ninguna coincidencia se devuelve un código 404."
+							},
+							"response": []
+						},
+						{
+							"name": "9.10 Get un elemento from",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4a2ff920-d710-45d8-a058-13f5f53f731d",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&from=8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "from",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.11 Get un elemento from error",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4a2ff920-d710-45d8-a058-13f5f53f731d",
+										"exec": [
+											"tests[\"Error. No existe ese elemento.\"]=responseCode.code===404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&from=20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "from",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.12 Get un elemento to",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1b8a6dd8-52c3-4822-a14f-bb28d7ab8a4c",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&to=7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "to",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.13 Get un elemento to error",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1b8a6dd8-52c3-4822-a14f-bb28d7ab8a4c",
+										"exec": [
+											"tests[\"Error. No existe dicho parámetro.\"]=responseCode.code===404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&to=-4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "to",
+											"value": "-4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.14 Get un elemento sort poblacion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e70627dd-cdb8-4b34-a5b3-61a4928d9625",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?sort=poblacion&API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "poblacion"
+										},
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.15 Get un elemento sort pais",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e70627dd-cdb8-4b34-a5b3-61a4928d9625",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?sort=pais&API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "pais"
+										},
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.16 Get un elemento sort ciudad",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e70627dd-cdb8-4b34-a5b3-61a4928d9625",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?sort=ciudad&API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "ciudad"
+										},
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.17 Get un elemento sort error",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e70627dd-cdb8-4b34-a5b3-61a4928d9625",
+										"exec": [
+											"tests[\"Error. No se puede ordenar por ese parámetro.\"]=responseCode.code===400;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?sort=paiss&API_KEY=123ABC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "paiss"
+										},
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.18 Get un elemento from to",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cf0f2475-5537-4b3f-967b-747a609f7a41",
+										"exec": [
+											"tests[\"Todo OK\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&from=2&to=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "from",
+											"value": "2"
+										},
+										{
+											"key": "to",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.19 Get un elemento from to error",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cf0f2475-5537-4b3f-967b-747a609f7a41",
+										"exec": [
+											"tests[\"Error. No existen parámetros que cumplan.\"]=responseCode.code===404;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&from=5&to=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "from",
+											"value": "5"
+										},
+										{
+											"key": "to",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9.20 Get un elemento sort dos parámetros",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e70627dd-cdb8-4b34-a5b3-61a4928d9625",
+										"exec": [
+											"tests[\"Algo no ha funcionado\"]=responseCode.code===400;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?sort=Ciudad&API_KEY=123ABC&sort=poblacion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "Ciudad"
+										},
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "sort",
+											"value": "poblacion"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "10.X Pruebas Negativas",
+					"item": [
+						{
+							"name": "10.1 Get con formato double",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=2.0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "2.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.2 Get con formato string",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&indice=dos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "indice",
+											"value": "dos"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.3 Get con from en formato incoherente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&from=2.0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "from",
+											"value": "2.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.4 Get con from en formato incoherente(String)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&from=dos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "from",
+											"value": "dos"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.5 Get con to en formato incoherente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&to=2.0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "to",
+											"value": "2.0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.6 Get con to en formato incoherente(String)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&to=dos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "to",
+											"value": "dos"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.7 Get con sort en formato mal introducido",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&sort=Ciudad",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "sort",
+											"value": "Ciudad"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.8 Get con dos sorts, uno mal uno bien",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&sort=Ciudad&sort=poblacion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "sort",
+											"value": "Ciudad"
+										},
+										{
+											"key": "sort",
+											"value": "poblacion"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10.9 Get sin nada esperando tabla vacía",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "007522ed-80d3-4b8c-9244-edbbe12fa748",
+										"exec": [
+											"tests[\"Todo ok\"]=responseCode.code===200;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API_REST/GestionCensoServlet?API_KEY=123ABC&sort=Ciudad&sort=poblacion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API_REST",
+										"GestionCensoServlet"
+									],
+									"query": [
+										{
+											"key": "API_KEY",
+											"value": "123ABC"
+										},
+										{
+											"key": "sort",
+											"value": "Ciudad"
+										},
+										{
+											"key": "sort",
+											"value": "poblacion"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
