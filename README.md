@@ -48,3 +48,13 @@ https://stackoverflow.com/questions/54296014/mysql-server-on-mamp-windows-will-n
 
 # Enlaces a .jar que hay que incluir en el proyecto:
  - GSON: https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5
+ 
+ ## Autores ✒️
+ * **Alejandro Martínez de la Haba ** - [alexdelahaba](https://github.com/alexdelahaba)
+ * **Leonor López Miranda** - [LeonorLM04](https://github.com/LeonorLM04)
+ * **Alicia Rojo Monedero** - [alijarali](https://github.com/alijarali)
+ 
+ También puedes ver los colaboradores en:
+ 
+ https://github.com/alijarali/API_REST/settings/collaboration
+ 
